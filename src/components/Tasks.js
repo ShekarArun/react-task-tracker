@@ -1,8 +1,9 @@
+import Task from './Task'
 
-const Tasks = ({ tasks }) => {
+const Tasks = ({ tasks, onDelete }) => {
   return (
     <>
-      {tasks.map((task) => (<h3 key={task.id}>{task.msg}</h3>))}
+      {tasks.map((task) => (<Task key={task.id} task={task} onDelete={() => onDelete(task.id)} />))}
     </>
   )
 }
